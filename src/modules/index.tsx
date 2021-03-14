@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Navbar } from '../components/environment/navbar';
-import { NavbarItem } from '../components/environment/navbar/types';
 import { getLazyLoadContainerFor } from '../lib/lazyModuleFactory';
 import { mainMenu } from './menu';
 
