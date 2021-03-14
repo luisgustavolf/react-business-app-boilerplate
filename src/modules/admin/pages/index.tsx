@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { useRouteMatch } from "react-router-dom";
-import { lazyModuleFactory } from "../../../lib/lazyModuleFactory";
+import { getLazyLoadContainerFor } from "../../../lib/lazyModuleFactory";
 
 export default function AdminModule() {
     const { path } = useRouteMatch();
-    const ClientsPages = lazyModuleFactory(() => import('./clients'));
+    const ClientsPages = getLazyLoadContainerFor(() => import('./clients'));
     
     return (
         <Switch>
