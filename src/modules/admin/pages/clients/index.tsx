@@ -4,7 +4,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { ClientPage } from './client';
 import { ClientSearchPage } from './search';
 
-export default function () {
+export default function ClientsFeatureModule() {
     let { path } = useRouteMatch();
     
     // ---------------------------------------------

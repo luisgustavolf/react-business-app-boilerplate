@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { useRouteMatch } from "react-router-dom";
 
-export default function () {
+export default function AdminModule() {
     let { path } = useRouteMatch();
 
     // ---------------------------------------------
