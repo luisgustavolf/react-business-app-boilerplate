@@ -13,8 +13,8 @@ export function ClientPage(props: RouteChildrenProps<ClientPageUrlParams> ) {
     // Render
 
     return (
-        <div className={'mc2-ClientPage'}>
-            Crud de cliente
+        <div className={'dc-client-page'}>
+            Client's CRUD page
         </div>
     )
 }

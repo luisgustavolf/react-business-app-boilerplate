@@ -3,16 +3,13 @@ import { ComponentType } from 'react';
 
 export function lazyModuleFactory<T extends ComponentType<any>>(factory: () => Promise<{ default: T }>) {
 
-    const LazyModule = React.lazy(factory) as any;
+    const LazyModule = React.lazy(factory) as React.LazyExoticComponent<any>;
 
-    // ---------------------------------------------
-    // Transformations
-    // ---------------------------------------------
-    // Render
-
-    return () => (
-        <React.Suspense fallback={'...'}>
-            <LazyModule />
-        </React.Suspense>
-    )
+    return () => {
+        return (
+            <React.Suspense fallback={'Loading...'}>
+                <LazyModule />
+            </React.Suspense>
+        )
+    }
 }

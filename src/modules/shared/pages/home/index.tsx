@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { RouteChildrenProps } from 'react-router'
 
-export function ClientSearchPage(props: RouteChildrenProps) {
+export function HomePage() {
 
     // ---------------------------------------------
     // Transformations
@@ -9,8 +8,8 @@ export function ClientSearchPage(props: RouteChildrenProps) {
     // Render
 
     return (
-        <div className={'mc2-ClientSearchPage'}>
-            Client's search page
+        <div className={'dc-home-page'}>
+            Hello! Welcome to the <b>react-business-app-boilerplate</b>
         </div>
     )
 }
