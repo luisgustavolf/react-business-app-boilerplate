@@ -1,33 +1,15 @@
 import * as React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
+import { lazyModuleFactory } from '../lib/lazyModuleFactory';
 
-export interface ModulesProps {
-    children?: any
-}
-
-export function Modules(props:ModulesProps) {
-
-    // ---------------------------------------------
-    // Transformations
-    // ---------------------------------------------
-    // Render
-
-    const AdminModule = React.lazy(() => import('./admin/pages'));
-    const SharedModule = React.lazy(() => import('./shared/pages'));
+export function Modules() {
+    const AdminModulePages = lazyModuleFactory(() => import('./admin/pages'));
+    const SharedModulePages = lazyModuleFactory(() => import('./shared/pages'));
 
     return (
         <HashRouter>
-            <Route path={'/admin'}>
-                <React.Suspense fallback={'...'}>
-                    <AdminModule />
-                </React.Suspense>
-            </Route>
-
-            <Route path={'/'}>
-                <React.Suspense fallback={'...'}>
-                    <SharedModule />
-                </React.Suspense>
-            </Route>
+            <Route path={'/admin'} component={AdminModulePages} />
+            <Route path={'/'} component={SharedModulePages} />
         </HashRouter>
     )
 }

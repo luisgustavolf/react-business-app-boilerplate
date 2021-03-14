@@ -1,24 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { useRouteMatch } from "react-router-dom";
+import { lazyModuleFactory } from "../../../lib/lazyModuleFactory";
 
 export default function AdminModule() {
-    let { path } = useRouteMatch();
-
-    // ---------------------------------------------
-    // Transformations
-    // ---------------------------------------------
-    // Render
-
-    const ClientsModule = React.lazy(() => import('./clients'));
-
+    const { path } = useRouteMatch();
+    const ClientsPages = lazyModuleFactory(() => import('./clients'));
+    
     return (
         <Switch>
-            <Route path={`${path}/clients`}>
-                <React.Suspense fallback={'...'}>
-                    <ClientsModule />
-                </React.Suspense>
-            </Route>
+            <Route path={`${path}/clients`} component={ClientsPages} />
         </Switch>
     )
 }
