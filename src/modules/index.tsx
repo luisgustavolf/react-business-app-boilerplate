@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Navbar } from '../components/environment/navbar';
-import { getLazyLoadContainerFor } from '../lib/lazyModuleFactory';
+import { getLazyLoadContainerFor } from '../lib/lazyLoading';
 import { mainMenu } from './menu';
 
 export function Modules() {
