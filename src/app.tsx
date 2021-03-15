@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { HashRouter } from 'react-router-dom';
-import { Modules } from './modules';
+import { Pages } from './pages';
 
 export function App() {
   return (
     <Fragment>
         <HashRouter>
-          <Modules />
+          <Pages />
         </HashRouter>
     </Fragment>
   );

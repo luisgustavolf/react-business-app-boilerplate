@@ -4,11 +4,11 @@ import { Navbar } from '../components/environment/navbar';
 import { getLazyLoadContainerFor } from '../lib/lazyLoading';
 import { mainMenu } from './menu';
 
-export function Modules() {
+export function Pages() {
     const { push } = useHistory()
     
-    const AdminModulePages = getLazyLoadContainerFor(() => import('./admin/pages'));
-    const SharedModulePages = getLazyLoadContainerFor(() => import('./shared/pages'));
+    const AdminModulePages = getLazyLoadContainerFor(() => import('./admin/'));
+    const SharedModulePages = getLazyLoadContainerFor(() => import('./shared/'));
 
     return (
         <React.Fragment>
